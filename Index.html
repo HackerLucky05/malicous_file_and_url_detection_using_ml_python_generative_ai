@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- <style>
+    /* --- Global Styles --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+    }
+
+    /* --- Navigation Bar --- */
+    .navbar {
+        width: 100%;
+        padding: 20px 40px;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* --- Container & Cards --- */
+    .container {
+        width: 90%;
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* --- Typography --- */
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    h2:not(:first-of-type) {
+        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 40px;
+    }
+
+    label {
+        display: block;
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 8px;
+    }
+
+    /* --- Forms & Inputs --- */
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    input[type="file"],
+    input[type="text"] {
+        flex: 1;
+        min-width: 200px;
+        padding: 12px 16px;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #fff;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    input[type="file"]::file-selector-button {
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+        background: rgba(56, 189, 248, 0.2);
+    }
+
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        background: rgba(15, 23, 42, 0.8);
+    }
+
+    /* --- Buttons --- */
+    button {
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    }
+
+    button:active {
+        transform: translateY(0);
+    }
+
+    /* --- Results Section --- */
+    h3 {
+        font-size: 1.1rem;
+        color: #38bdf8;
+        margin-top: 25px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    p {
+        background: rgba(15, 23, 42, 0.5);
+        border-left: 4px solid #38bdf8;
+        padding: 16px;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #cbd5e1;
+        white-space: pre-wrap;
+        /* Preserves AI message line breaks */
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+</style> -->
+<style>
+    /* --- Global Styles --- */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #020617 100%);
+        color: #f8fafc;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 40px;
+        position: relative;
+        overflow-x: hidden;
+        /* Prevents background items from causing horizontal scrolling */
+    }
+
+    /* --- Floating Background Elements --- */
+    body::before,
+    body::after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        border-radius: 50%;
+        backdrop-filter: blur(40px);
+        -webkit-backdrop-filter: blur(40px);
+        pointer-events: none;
+        /* Allows clicks to pass through to buttons */
+    }
+
+    /* Glowing Top-Left Shape */
+    body::before {
+        width: 300px;
+        height: 300px;
+        background: rgba(56, 189, 248, 0.12);
+        top: 15%;
+        left: -5%;
+        animation: floatLeft 8s ease-in-out infinite alternate;
+    }
+
+    /* Glowing Bottom-Right Shape */
+    body::after {
+        width: 400px;
+        height: 400px;
+        background: rgba(99, 102, 241, 0.1);
+        bottom: 10%;
+        right: -8%;
+        animation: floatRight 10s ease-in-out infinite alternate;
+    }
+
+    /* --- Keyframe Animations --- */
+    @keyframes floatLeft {
+        0% {
+            transform: translateY(0) scale(1) translateX(0);
+        }
+
+        100% {
+            transform: translateY(-40px) scale(1.1) translateX(20px);
+        }
+    }
+
+    @keyframes floatRight {
+        0% {
+            transform: translateY(0) rotate(0deg);
+        }
+
+        100% {
+            transform: translateY(50px) translateX(-30px);
+        }
+    }
+
+    /* --- Navigation Bar --- */
+    .navbar {
+        width: 100%;
+        padding: 20px 40px;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 2;
+    }
+
+    .navbar h1 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        background: linear-gradient(to right, #38bdf8, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* --- Container & Cards --- */
+    .container {
+        width: 90%;
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        position: relative;
+        z-index: 1;
+        /* Keeps content layered perfectly above the floating graphics */
+        animation: containerIntro 1s ease-out;
+    }
+
+    @keyframes containerIntro {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* --- Typography --- */
+    h2 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    h2:not(:first-of-type) {
+        margin-top: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 40px;
+    }
+
+    label {
+        display: block;
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 8px;
+    }
+
+    /* --- Forms & Inputs --- */
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    input[type="file"],
+    input[type="text"] {
+        flex: 1;
+        min-width: 200px;
+        padding: 12px 16px;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #fff;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    input[type="file"]::file-selector-button {
+        background: rgba(56, 189, 248, 0.1);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+        padding: 6px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.2s ease;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+        background: rgba(56, 189, 248, 0.2);
+    }
+
+    input[type="text"]:focus {
+        outline: none;
+        border-color: #6366f1;
+        box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        background: rgba(15, 23, 42, 0.8);
+    }
+
+    /* --- Buttons --- */
+    button {
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(79, 70, 229, 0.5);
+        background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    }
+
+    button:active {
+        transform: translateY(0);
+    }
+
+    /* --- Results Section --- */
+    h3 {
+        font-size: 1.1rem;
+        color: #38bdf8;
+        margin-top: 25px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    p {
+        background: rgba(15, 23, 42, 0.5);
+        border-left: 4px solid #38bdf8;
+        padding: 16px;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #cbd5e1;
+        white-space: pre-wrap;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+
+    /* Full-screen overlay container */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    /* --- Clear / Start New Scan Link Button --- */
+    .my-special-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 24px;
+        padding: 10px 20px;
+        background: rgba(15, 23, 42, 0.6);
+        color: #38bdf8;
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .my-special-link:hover {
+        background: rgba(56, 189, 248, 0.15);
+        border-color: #38bdf8;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(56, 189, 248, 0.25);
+    }
+
+    .my-special-link:active {
+        transform: translateY(0);
+    }
+
+
+
+    /* .result-box {
+        margin-top: 20px;
+        padding: 16px;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    } */
+
+    /* Modern cyber spinning wheel */
+    .spinner-wheel {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.1);
+        border-top-color: #38bdf8;
+        border-right-color: #818cf8;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+
+    /* Loading text style */
+    .loading-text {
+        margin-top: 20px;
+        color: #f8fafc;
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    /* Keyframe Animations */
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 0.6;
+            transform: scale(0.98);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <h1>YourTechnicalGuard</h1>
+    </div>
+    <div class="container">
+        <h2>malicious files</h2>
+        <form action="/scam/" method="post" enctype="multipart/form-data"
+            onsubmit="showSpinner('fileForm','fileSpinner')">
+            <label for="file">upload a file (PDF/TXT only)</label>
+            <input type="file" name="file" required>
+            <button type="submit">Analyze</button>
+
+        </form>
+
+        {% if message %}
+        <h3>Results:</h3>
+        <p>{{message}}</p>
+        {% endif %}
+
+
+
+
+
+        <h2><i class="fas fa-link"></i>URL Threat Detection</h2>
+        <form action="/predict" method="post" onsubmit="showSpinner('urlForm','urlSpinner')">
+            <label for="url">Enter url:</label>
+            <input type="text" name="url" required>
+            <button type="submit"><i class="fas fa-search">classify</i></button>
+
+        </form>
+
+        {% if predicted_class %}
+        <div class="result-box {{predicted_class.lower()}}">
+            <p><strong>URL:</strong>{{input_url}}</p>
+            <p><strong>Predicted Class:</strong>{{predicted_class}}</p>
+        </div>
+        {% endif %}
+
+
+
+
+        {% if message or predicted_class %}
+        <a href="/" class="my-special-link">
+            ← Start New Scan
+        </a>
+        {% endif %}
+    </div>
+
+    <script>
+        // This matches the exact function name called by your form's onsubmit attributes
+        function showSpinner(formId, spinnerId) {
+            // Create the overlay elements dynamically
+            const overlay = document.createElement('div');
+            overlay.className = 'loading-overlay';
+
+            const spinner = document.createElement('div');
+            spinner.className = 'spinner-wheel';
+
+            const text = document.createElement('div');
+            text.className = 'loading-text';
+            text.innerText = 'Your Guard is analyzing...';
+
+            // Assemble and append to the body
+            overlay.appendChild(spinner);
+            overlay.appendChild(text);
+            document.body.appendChild(overlay);
+
+            // Smooth fade-in effect
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 10);
+        }
+    </script>
+
+</body>
+
+</html>
